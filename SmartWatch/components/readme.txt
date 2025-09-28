@@ -1,0 +1,5 @@
+1、对esp_littlefs-master添加了esp_littlefs_get_lfs函数
+
+2、对esp-wifi-connect-main的dns_server补充了dns_server的stop函数；wifi_station的stop添加了event_group_的补充和esp_netif的补充。WifiConfigurationAp::StartAccessPoint() 增加安全校验和esp_netif_create_default_wifi_sta,在WifiConfigurationAp启动AP+STA模式时，STA接口缺少对应的网络接口对象
+
+3、在esp_hid里添加esp_hidd_reset_service_index

@@ -1,0 +1,5 @@
+用littlefs_create_partition_image打包图片进入flash的顺序是字典序
+
+1、使用RenameJpgFiles.ps1来重整目录下的文件名
+2、使用OffsetRename.ps1将多个文件夹的文件整合成一个文件夹
+3、使用FixJpgSorting.ps1将文件夹下的文件名符合字典序
