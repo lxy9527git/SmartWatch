@@ -104,6 +104,8 @@ namespace fml{
                     sr->multinet->clean(sr->model_data);
                 }else{
                     if(res->vad_state == VAD_SILENCE && sr->clean_trigger){
+                        /*3S内不说话就返回*/
+                        if((xTaskGetTickCount() - sr->clean_trigger_time)*portTICK_PERIOD_MS <= 3000)continue;
                         /*提前触发，返回结果*/
                         sr->multinet->clean(sr->model_data);    
                         sr->clean_trigger = false;
@@ -224,6 +226,7 @@ namespace fml{
     void SpeechRecongnition::sr_multinet_clean(MultinetCleanCallBack_t cb, void* user_data)
     {
         if(multinet != NULL && model_data != NULL){
+            clean_trigger_time = xTaskGetTickCount();
             multinet->clean(model_data);
             clean_trigger = true;
             clean_trigger_callback = cb;

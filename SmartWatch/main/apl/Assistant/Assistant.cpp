@@ -372,7 +372,6 @@ namespace apl{
     void Assistant::onOpen()
     {
         fml::HdlManager::getInstance().set_no_sleep_for_lvgl();
-        bll::ArtificialIntelligence::getInstance().reset();
         reset();
         ESP_LOGI(TAG, "Assistant on Open");
     }

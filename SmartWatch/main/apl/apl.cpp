@@ -136,7 +136,7 @@ namespace apl{
         std::vector<int32_t> m_audio_data(data.size());
         const int samples = fml::HdlManager::getInstance().get_audio_data(m_audio_data);
         for (int i = 0; i < samples; i++) {
-            int32_t value = m_audio_data[i] >> 14;      /*>>8 噪声还是太大，改为>>14*/
+            int32_t value = m_audio_data[i] >> 13;      /*>>8 噪声还是太大，改为>>13*/
             data[i] = (value > INT16_MAX) ? INT16_MAX : (value < -INT16_MAX) ? -INT16_MAX : (int16_t)value;
         }
         return samples;

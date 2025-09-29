@@ -88,7 +88,7 @@ namespace hdl{
                 /* Lvgl + disp + IIC */
                 lvgl::getInstance().init(2);
                 lv_display_set_color_format(lv_display_get_default(), (lv_color_format_t)LGVL_COLORDEPTH);
-                lv_log_register_print_cb(lv_log_print_g_cb);
+                //lv_log_register_print_cb(lv_log_print_g_cb);
                 //lv_littlefs_set_handler(p_lfs);
                 lvgl::getInstance().update();
 

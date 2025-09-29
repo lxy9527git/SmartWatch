@@ -80,6 +80,7 @@ namespace fml{
             bool clean_trigger;
             void* clean_trigger_user_data;
             MultinetCleanCallBack_t clean_trigger_callback;
+            uint32_t clean_trigger_time;
             void* result_user_data;
             MultinetResultCallBack_t result_callback;
             static void sr_send_result(SpeechRecongnition* sr, esp_mn_results_t *mn_result, bool is_clean_trigger);

@@ -868,7 +868,6 @@ namespace apl{
     void Painter::onOpen()
     {
         fml::HdlManager::getInstance().set_no_sleep_for_lvgl();
-        bll::ArtificialIntelligence::getInstance().reset();
         reset();
         ESP_LOGI(TAG, "Painter on Open");
     }
